@@ -6,8 +6,8 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus:/etc/prometheus
-      - ./prometheus-data:/prometheus
+      - ./prometheus/prometheus:/etc/prometheus
+      - ./prometheus/prometheus-data:/prometheus
     restart: unless-stopped
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
