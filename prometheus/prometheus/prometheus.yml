@@ -19,12 +19,7 @@ scrape_configs:
   # Example job for node_exporter
   - job_name: 'node_exporter'
     static_configs:
-            - targets: ['node_exporter:9100']
-              labels:
-              alias: 'Monitoring'
-            - targets: ['125.0.6.66:9100']
-              labels:
-                alias: 'Contact-forms'
+            - targets: ['node_exporter:9100','125.0.6.66:9100']
 
   # Example job for cadvisor
   - job_name: 'cadvisor'
