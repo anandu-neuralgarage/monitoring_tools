@@ -19,9 +19,14 @@ scrape_configs:
   # Example job for node_exporter
   - job_name: 'node_exporter'
     static_configs:
-      - targets: ['host.docker.internal:9100']
+            - targets: ['node_exporter:9100','125.0.6.66:9100']
 
   # Example job for cadvisor
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['host.docker.internal:8080']
+            - targets: ['cadvisor:8080','125.0.6.66:8080']
+
+   # Example job for cadvisor
+  - job_name: 'systemd_exporter'
+    static_configs:
+            - targets: ['125.0.6.66:9200']
