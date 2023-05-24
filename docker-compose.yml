@@ -8,6 +8,7 @@ services:
     volumes:
       - ./prometheus/prometheus:/etc/prometheus
       - ./prometheus/prometheus-data:/prometheus
+      - /efs/main:/efs/main
     restart: unless-stopped
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
